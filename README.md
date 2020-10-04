@@ -5,6 +5,7 @@ Allow requests from CloudFlare
 ## Installation
 
 ```
-npm i
+yarn add cf-only
+# or npm install --save cf-only
 ```
 
