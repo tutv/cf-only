@@ -2,7 +2,8 @@ const Schedule = require('../helpers/Schedule')
 const _fetchIps = require('./_fetchIps')
 const sleep = require('../helpers/sleep')
 
-const EVERY_HOUR = '0 0 */1 * * *'
+// const EVERY_HOUR = '0 0 */1 * * *'
+const EVERY_HOUR = 1000 * 60 * 60
 const MAXIMUM_RETRIES = 5
 
 const renewListIp = stores => () => {
@@ -48,7 +49,7 @@ const renewListIp = stores => () => {
 
 module.exports = (stores) => {
     Schedule.schedule('RENEW_LIST_IP', EVERY_HOUR, renewListIp(stores))
-    // Schedule.schedule('RENEW_LIST_IP', '*/5 * * * * *', renewListIp(stores))
+    // Schedule.schedule('RENEW_LIST_IP', 1000 * 2, renewListIp(stores))
 
     return true
 }
