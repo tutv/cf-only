@@ -11,7 +11,7 @@ const renewListIp = stores => () => {
         let retry = 0
 
         const run = async () => {
-            console.log(`STARTING FETCH NEW CLOUDFLARE IPs...`)
+            // console.log(`STARTING FETCH NEW CLOUDFLARE IPs...`)
             try {
                 const [ipsV4, ipsV6] = await _fetchIps()
 
@@ -21,7 +21,7 @@ const renewListIp = stores => () => {
 
                 resolve(true)
 
-                console.log(`FETCHED...`)
+                // console.log(`FETCHED...`)
             } catch (e) {
                 console.log('Failed to renew cloudflare ip: ', e.message)
 
@@ -48,6 +48,15 @@ const renewListIp = stores => () => {
 }
 
 module.exports = (stores) => {
+    /**
+     * FIRST RUN
+     */
+
+    setImmediate(() => {
+        renewListIp(stores)().then().catch()
+    })
+
+
     Schedule.schedule('RENEW_LIST_IP', EVERY_HOUR, renewListIp(stores))
     // Schedule.schedule('RENEW_LIST_IP', 1000 * 2, renewListIp(stores))
 

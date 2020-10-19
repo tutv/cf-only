@@ -7,7 +7,7 @@ setImmediate(async () => {
         const allIps = ranges.allIPs()
         console.log('allips', allIps)
 
-        await sleep(1000 * 10)
+        await sleep(1000 * 1)
 
         console.log(ranges.allIPs())
 

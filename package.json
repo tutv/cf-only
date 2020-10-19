@@ -26,13 +26,10 @@
     },
     "homepage": "https://github.com/tutv/cf-only#readme",
     "dependencies": {
-        "got": "10.7.0",
-        "ip-range-check": "^0.2.0",
-        "request": "^2.88.2"
+        "ip-range-check": "^0.2.0"
     },
     "devDependencies": {
         "@types/express": "^4.17.8",
-        "@types/got": "^9.6.11",
         "express": "^4.17.1"
     }
 }
