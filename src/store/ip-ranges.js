@@ -1,5 +1,5 @@
 const _parseIPs = require('../helpers/_parseIPs')
-
+const scheluder = require('./scheduler')
 
 const _ipv4 = `
 173.245.48.0/20
@@ -30,11 +30,17 @@ const _ipv6 = `
 
 const ipv4s = _parseIPs(_ipv4)
 const ipv6s = _parseIPs(_ipv6)
-
-
 const _allIPs = [].concat(ipv4s, ipv6s)
 
-exports.ipv4s = () => ipv4s
-exports.ipv6s = () => ipv6s
-exports.allIPs = () => _allIPs
+const _stores = {
+    ipV4s: ipv4s,
+    ipV6s: ipv6s,
+    allIPs: _allIPs,
+}
+
+scheluder(_stores)
+
+exports.ipv4s = () => _stores.ipv4s
+exports.ipv6s = () => _stores.ipv6s
+exports.allIPs = () => _stores.allIPs
 

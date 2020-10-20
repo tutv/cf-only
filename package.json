@@ -1,28 +1,35 @@
 {
-  "name": "cf-only",
-  "version": "1.0.0",
-  "description": "Allow requests from CloudFlare",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "node test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tutv/cf-only.git"
-  },
-  "keywords": [
-    "cloudflare"
-  ],
-  "author": {
-    "name": "Tu TV",
-    "email": "tutv95@gmail.com"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tutv/cf-only/issues"
-  },
-  "homepage": "https://github.com/tutv/cf-only#readme"
+    "name": "cf-only",
+    "version": "1.0.0",
+    "description": "Allow requests from CloudFlare",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "node test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tutv/cf-only.git"
+    },
+    "keywords": [
+        "cloudflare"
+    ],
+    "author": {
+        "name": "Tu TV",
+        "email": "tutv95@gmail.com"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/tutv/cf-only/issues"
+    },
+    "homepage": "https://github.com/tutv/cf-only#readme",
+    "dependencies": {
+        "ip-range-check": "^0.2.0"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.8",
+        "express": "^4.17.1"
+    }
 }
